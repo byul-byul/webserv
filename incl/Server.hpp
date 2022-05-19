@@ -2,6 +2,7 @@
 # define SERVER_HPP
 
 # include <iostream>
+# include <set>
 
 # include "Socket.hpp"
 
@@ -10,8 +11,8 @@ class Socket;
 class Server
 {
     private:
-        //Socket      socket;
-        int     _socketFD;
+        std::set<int>     _clientSocketList;
+        Socket            _masterSocket;
     
     public:
         Server( void );
